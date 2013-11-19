@@ -1,0 +1,47 @@
+<div id="book_list">
+<!-- id must be unique but class need not be- css -->
+
+<h1>Book Listing</h1>
+
+<table>
+
+<% @books.each do |book| %>
+  <!--by giving class to odd and even rows of table allows us to apply different colours to each in css -->
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
+ 
+   <td>
+	<%= image_tag(book.image_url, :class => 'list_image') %>
+   </td>
+
+
+   <td class="list_description">
+        <dl>
+	  <dt>Title: </dt>
+          <dd><%= book.title %></dd>
+	  <dt>Author: </dt>
+	  <dd><%= book.author %></dd>
+	  <dt>Genre: </dt>
+	  <dd><%= book.genre %></dd>
+    	  
+    	  <dt><%= book.rating %></dt>
+          <dd><%= truncate(strip_tags(book.review),
+                 :length => 2000) %></dd>
+        </dl>
+    
+    
+
+    
+
+    <td cless="list_actions">
+       <%= link_to 'Show', book %><br/>
+       <%= link_to 'Edit', edit_book_path(book) %><br/>
+      <%= link_to 'Destroy', book, :method => :delete, :data => 		{ :confirm => 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>
