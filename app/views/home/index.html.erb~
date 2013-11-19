@@ -1,0 +1,14 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>Book Reviews Home</h1>
+<% @books.each do |book| %>
+  <div class="entry">
+    <%= image_tag(book.image_url) %>
+    <h3><%= book.title %></h3>
+    <%= sanitize book.review %>
+    <div class="rating">
+      <span class="rating"><%= book.rating %></span>
+    </div>
+  </div>
+<% end %>
