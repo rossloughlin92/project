@@ -17,16 +17,19 @@
 
    <td class="list_description">
         <dl>
-	  <dt>Title: </dt>
+	  <dt>Title: </dt> 
           <dd><%= book.title %></dd>
 	  <dt>Author: </dt>
 	  <dd><%= book.author %></dd>
 	  <dt>Genre: </dt>
 	  <dd><%= book.genre %></dd>
-    	  
-    	  <dt><%= book.rating %></dt>
+	  
+    	  <dt>Rating: </dt>
+    	  <dd><%= book.rating %></dd>
+	  
+	  <dt>Review: </dt>
           <dd><%= truncate(strip_tags(book.review),
-                 :length => 2000) %></dd>
+                 :length => 80) %></dd>
         </dl>
     
     
