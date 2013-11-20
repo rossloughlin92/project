@@ -6,9 +6,23 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="home">
+  <div id="banner">
+    <%= @page_title || "Good Reviews" %>
+  </div>
 
-<%= yield %>
-
+  <div id="columns">
+    <div id="side">
+      <p>
+      <%= link_to "Home" , home_path%></p>
+      <a href="http://www..../faq">Genres</a><br />
+      <a href="http://www..../news">Top</a><br />
+      <a href="http://www..../contact">Contact</a><br />
+    </div>
+  
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
