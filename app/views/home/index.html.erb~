@@ -1,14 +1,28 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
+<div id="book_list">
 <h1>Book Reviews Home</h1>
+
+<table>
+<
 <% @books.each do |book| %>
-  <div class="entry">
-    <%= image_tag(book.image_url) %>
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
+ 
+   <td>
+	<%= image_tag(book.image_url, :class => 'list_image') %>
+   </td>
+   
+    <td class="list_description">
     <h3><%= book.title %></h3>
     <%= sanitize book.review %>
-    <div class="rating">
-      <span class="rating"><%= book.rating %></span>
-    </div>
+    
+    </td>
+    <td>
+      <span class="rating"><p>Rating:</p><%= book.rating %></span>
+    </td>
   </div>
 <% end %>
+
+</table>
