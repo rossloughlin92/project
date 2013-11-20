@@ -29,7 +29,7 @@
 	  
 	  <dt>Review: </dt>
           <dd><%= truncate(strip_tags(book.review),
-                 :length => 80) %></dd>
+                 :length => 2000) %></dd>
         </dl>
     
     

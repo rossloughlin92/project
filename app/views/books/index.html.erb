@@ -28,7 +28,7 @@
     	  <dd><%= book.rating %></dd>
 	  
 	  <dt>Review: </dt>
-          <dd><%= truncate(strip_tags(book.review),
+          <dd><%= truncate(strip_tags(book.description),
                  :length => 2000) %></dd>
         </dl>
     
